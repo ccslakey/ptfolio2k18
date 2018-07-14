@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Connor Slakey Portfolio</title>
+
+	<style type="text/css">
+		html, body {
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		#header-content{
+			background: url('photos/coolguy.jpg');
+			width: 100%;
+			height: 500px;
+			min-height: 300px;
+			background-size: cover;
+			vertical-align: middle;
+		}
+		#header-content h1 {
+			color: white;
+			font-size: 4em;
+			margin: 0;
+			text-align: center;
+			padding-top: calc(50% - 200px);
+			text-shadow: 1px 1px 5px black;
+		}
+
+		.row {
+			width: 100%;
+			display: flex;			
+		}
+
+		.jumbo {
+			width: 90%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			background: grey;
+			/*min-height: 500px;*/
+			height: auto;
+			margin-top: 45px;
+			border-radius: 5px;
+			color: white;
+		}
+		.jumbo p {
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+		.card {
+			width: 25%;
+			margin: 30px;
+			border: 1px solid black;
+			box-shadow: 1px 1px 1px black;
+			min-height: 200px;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+		.card h4 {
+			color: #03a9f4;
+		}
+		.card-img {
+			width: 100%;
+		}
+
+
+		/* The Modal (background) */
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			padding-top: 100px; /* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+			background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+			background-color: #fefefe;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%;
+		}
+
+		/* The Close Button */
+		.close {
+			color: #aaaaaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="header-content">
+		<h1>Hello, World.</h1>
+	</div>
+
+	<div id="main-content">
+		<div class="jumbo">
+			
+			<p>My name is Connor Slakey. I'm a web and software developer as well as educator living in the Sacramento area. Here is some of my work.
+			<!-- add more here --></p>
+		</div>
+
+		<div id="employers">
+			<div class="row">
+				<div class="card">
+					<!-- investcloud -->
+					<img src="photos/investcloud.png" alt="" class="card-img">
+					<h4 id="icBtn">InvestCloud</h4>
+					<!-- Trigger/Open The Modal -->
+					<!-- <button id="icBtn">InvestCloud</button> -->
+
+					<!-- The Modal -->
+					<div id="icModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<p>Some text in the Modal..</p>
+					</div>
+
+					</div>
+				</div>
+				<div class="card">
+					<!-- vigilant.cc -->
+					<img src="photos/vigilant.png" alt="" class="card-img">
+					<h4>Vigilant.cc</h4>
+				</div>
+				<div class="card">
+					<!-- golfMDS -->
+					<img src="photos/troydgolf.png" alt="" class="card-img">
+					<h4>GolfMDs</h4>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="card">
+					<!-- home tutoring plus -->
+					<img src="photos/hometutsplus.png" alt="" class="card-img">
+					<h4>Home Tutoring Plus</h4>
+				</div>
+				<div class="card">
+					<!-- hackingtons -->
+					<img src="photos/hackingtons.png" alt="" class="card-img">
+					<h4>Hackingtons</h4>
+				</div>
+				<div class="card">
+					<!-- achievable -->
+					<img src="photos/achievable.png" alt="" class="card-img">
+					<h4>Achievable</h4>
+				</div>
+			</div>
+		</div>
+		<div id="projects"></div>
+
+	</div>
+
+
+
+
+	<div id="footer-content"></div>
+
+
+	<script>
+		// Get the modal
+		var modal = document.getElementById('icModal');
+
+		// Get the button that opens the modal
+		var btn = document.getElementById("icBtn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks the button, open the modal 
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	
+	</script>
+</body>
+</html>
