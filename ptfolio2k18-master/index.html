@@ -21,15 +21,19 @@
 		#header-content h1 {
 			color: white;
 			font-size: 4em;
+			width: 50%;
+			min-width: 300px;
 			margin: 0;
+			margin-left: auto;
+			margin-right: auto;
 			text-align: center;
-			padding-top: calc(50% - 200px);
+			padding-top: 10%;
 			text-shadow: 1px 1px 5px black;
 		}
 
 		.row {
 			width: 100%;
-			display: flex;			
+			display: flex;
 		}
 
 		.jumbo {
@@ -62,6 +66,10 @@
 		}
 		.card h4 {
 			color: #03a9f4;
+			cursor: pointer;
+		}
+		.card h4:hover {
+			text-decoration: underline;
 		}
 		.card-img {
 			width: 100%;
@@ -106,7 +114,21 @@
 			text-decoration: none;
 			cursor: pointer;
 		}
+		/* media queries for cards */
+		@media (max-width: 400px) {
+		  .row {
+		    display: block;
+		  }
+			.card {
+				width: 100%;
+				/* margin: 0; */
+			}
+		}
+
 	</style>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 	<div id="header-content">
@@ -115,7 +137,7 @@
 
 	<div id="main-content">
 		<div class="jumbo">
-			
+
 			<p>My name is Connor Slakey. I'm a web and software developer as well as educator living in the Sacramento area. Here is some of my work.
 			<!-- add more here --></p>
 		</div>
@@ -125,30 +147,41 @@
 				<div class="card">
 					<!-- investcloud -->
 					<img src="photos/investcloud.png" alt="" class="card-img">
-					<h4 id="icBtn">InvestCloud</h4>
 					<!-- Trigger/Open The Modal -->
-					<!-- <button id="icBtn">InvestCloud</button> -->
-
+					<h4 id="icBtn">Investcloud</h4>
 					<!-- The Modal -->
 					<div id="icModal" class="modal">
-
-					<!-- Modal content -->
-					<div class="modal-content">
-						<span class="close">&times;</span>
-						<p>Some text in the Modal..</p>
-					</div>
-
+						<!-- Modal content -->
+						<div class="modal-content">
+							<span id="icClose">&times;</span>
+							<p>Some text in the Modal..</p>
+						</div>
 					</div>
 				</div>
 				<div class="card">
 					<!-- vigilant.cc -->
 					<img src="photos/vigilant.png" alt="" class="card-img">
-					<h4>Vigilant.cc</h4>
+					<h4 id="vigBtn">Vigilant</h4>
+
+					<div id="vigModal" class="modal">
+						<!-- Modal content -->
+						<div class="modal-content">
+							<span id="vigClose">&times;</span>
+							<p>Some text in the vigilant Modal..</p>
+						</div>
+					</div>
 				</div>
 				<div class="card">
 					<!-- golfMDS -->
 					<img src="photos/troydgolf.png" alt="" class="card-img">
-					<h4>GolfMDs</h4>
+					<h4 id="gmdBtn">GolfMDs</h4>
+					<div id="gmdModal" class="modal">
+						<!-- Modal content -->
+						<div class="modal-content">
+							<span id="gmdClose">&times;</span>
+							<p>Some text in the gmd Modal..</p>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -181,32 +214,81 @@
 
 
 	<script>
-		// Get the modal
-		var modal = document.getElementById('icModal');
+		// first modal
+		var icModal = document.getElementById('icModal');
 
 		// Get the button that opens the modal
-		var btn = document.getElementById("icBtn");
+		var icBtn = document.getElementById("icBtn");
 
 		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
+		var icSpan = document.getElementById("icClose");
 
-		// When the user clicks the button, open the modal 
-		btn.onclick = function() {
-			modal.style.display = "block";
+		// When the user clicks the button, open the modal
+		icBtn.onclick = function() {
+			icModal.style.display = "block";
 		}
 
 		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
-			modal.style.display = "none";
+		icSpan.onclick = function() {
+			icModal.style.display = "none";
+		}
+
+
+		// second Modal
+		var vigModal = document.getElementById('vigModal');
+
+		// Get the button that opens the modal
+		var vigBtn = document.getElementById("vigBtn");
+
+		// Get the <span> element that closes the modal
+		var vigSpan = document.getElementById("vigClose");
+
+		// When the user clicks the button, open the modal
+		vigBtn.onclick = function() {
+			vigModal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		vigSpan.onclick = function() {
+			vigModal.style.display = "none";
+		}
+
+
+
+		// third Modal
+		var gmdModal = document.getElementById('gmdModal');
+
+		// Get the button that opens the modal
+		var gmdBtn = document.getElementById("gmdBtn");
+
+		// Get the <span> element that closes the modal
+		var gmdSpan = document.getElementById("gmdClose");
+
+		// When the user clicks the button, open the modal
+		gmdBtn.onclick = function() {
+			gmdModal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		gmdSpan.onclick = function() {
+			gmdModal.style.display = "none";
 		}
 
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
+			console.log("click!");
+			console.log(event);
+			if (event.target == icModal) {
+				icModal.style.display = "none";
+			}
+			if (event.target == gmdModal) {
+				gmdModal.style.display = "none";
+			}
+			if (event.target == vigModal) {
+				vigModal.style.display = "none";
 			}
 		}
-	
+
 	</script>
 </body>
 </html>
